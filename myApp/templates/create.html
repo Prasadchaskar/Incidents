@@ -1,0 +1,171 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="stylesheet" type="text/css" href="/media/admin/css/forms.css"/>
+<link rel="stylesheet" type="text/css" href="/media/admin/css/base.css"/>
+<link rel="stylesheet" type="text/css" href="/media/admin/css/global.css"/>
+<link rel="stylesheet" type="text/css" href="/media/admin/css/widgets.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon.png' %}">
+        <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+        <!-- Custom CSS -->
+        <link href="{% static 'dist/css/style.min.css' %}" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+<script type="text/javascript" src="{% static '/admin/js/core.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static '/admin/css/widgets.css' %}">
+<style>.calendar>table>caption{caption-side:unset}</style><!--caption fix for bootstrap4-->
+    </head>
+</head>
+<body>
+{% block body %}
+     <form method="POST">
+            {% csrf_token %}
+        <div class="form-body">
+           
+           
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Location </label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        {{ form.location }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Incident Department </label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    
+                        {{ form.Incident_Department }}
+                 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Date and Time of Incident </label>
+                    </div>
+                </div>
+                <div class="col-md-10" id ="picker">
+                    
+                        {{ form.Date }}
+                        <br>
+                        {{ form.Time }}
+                 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Incident Location </label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        {{ form.Incident_location }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Initial Severity </label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        {{ form.Initial_Severity }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Suspected Cause</label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        {{ form.suspected_Cause }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Immediate Ation Taken</label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        {{ form.immediate_Ation_Taken }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Sub Incident Type</label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        {{ form.Sub_Incident_Type }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Reported By</label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        {{ form.Reportes_By }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-actions">
+            <div class="text-right">
+                <button type="submit" class="btn btn-info">Submit</button>
+                <button type="reset" class="btn btn-dark">Reset</button>
+            </div>
+        </div> 
+      
+    </form>
+<!-- <script>
+    $('picker').datetimepicker({
+        timepicker : true,
+        datepicker : true,
+        format : 'H:1'
+    })
+</script> -->
+
+{% endblock body %}
+</body>
+</html>
